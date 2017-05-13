@@ -6,19 +6,15 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/03 21:43:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/03 23:10:19 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/05/13 20:13:40 by mnunnari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ls.h>
 
 #ifdef __APPLE__ 
-# define OPTU_LONG do {\
-	else if (g_ls_opts & OPT_U) \
-		return (file->statbuf.st_birthtime); \
-	} while(0)
+# define OPTU_LONG return (file->statbuf.st_birthtime);
 #else
-
 # define OPTU_LONG
 # define listxattr(a, b, c, d) listxattr(a, b, c)
 #endif
@@ -31,6 +27,7 @@ static inline time_t	ls_get_time(t_file *file)
 		return (file->statbuf.st_ctime);
 	else if (g_ls_opts & OPT_u)
 		return (file->statbuf.st_atime);
+	else if (g_ls_opts & OPT_U)
 	OPTU_LONG
 	else
 		return (file->statbuf.st_mtime);

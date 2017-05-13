@@ -6,20 +6,17 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/30 05:46:06 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/03 23:06:23 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/05/13 14:29:59 by mnunnari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ls.h>
 
 #ifdef __APPLE__ 
-#define OPTU do {\
-	else if (g_ls_opts & OPT_U) \
-	{ \
+#define OPTU_SORT do {\
 		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_birthtimespec; \
 		((t_file *)(b))->cmptime = ((t_file *)(b))->statbuf.st_birthtimespec; \
-	}\
-	} while(0)
+		} while(0);
 #else
 #define OPTU
 #endif
@@ -38,7 +35,8 @@ static inline void	ls_get_timefmt(void *a, void *b)
 		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_ctimespec;
 		((t_file *)(b))->cmptime = ((t_file *)(b))->statbuf.st_ctimespec;
 	}
-	OPTU
+	else if (g_ls_opts & OPT_U)
+	OPTU_SORT
 	else if (g_ls_opts & OPT_u)
 	{
 		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_atimespec;

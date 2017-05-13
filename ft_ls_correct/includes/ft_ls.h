@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/20 15:01:04 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/03 23:07:44 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/05/13 14:00:03 by mnunnari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@
 # include <sys/xattr.h>
 # include <limits.h>
 
-# define st_atimespec            st_atim
-# define st_mtimespec            st_mtim
-# define st_ctimespec            st_ctim
-# define st_birthtimespec        st_birthtim
-
+# ifndef __APPLE__
+#  define st_atimespec            st_atim
+#  define st_mtimespec            st_mtim
+#  define st_ctimespec            st_ctim
+#  define st_birthtimespec        st_birthtim
+# endif
 
 typedef struct		s_file
 {
