@@ -13,6 +13,8 @@
 #ifndef NBR_H
 # define NBR_H
 
+#include <inttypes.h>
+
 char		*ft_imaxtoa(intmax_t value);
 int			ft_is_sort(int *tab, int length, int (*f)(int, int));
 char		*ft_itoa_base(int value, int base);

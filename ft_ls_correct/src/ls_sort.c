@@ -12,6 +12,18 @@
 
 #include <ft_ls.h>
 
+#ifdef __APPLE__ 
+#define OPTU do {\
+	else if (g_ls_opts & OPT_U) \
+	{ \
+		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_birthtimespec; \
+		((t_file *)(b))->cmptime = ((t_file *)(b))->statbuf.st_birthtimespec; \
+	}\
+	} while(0)
+#else
+#define OPTU
+#endif
+
 extern long int g_ls_opts;
 
 static int			ls_lexcmp(void *a, void *b)
@@ -26,11 +38,7 @@ static inline void	ls_get_timefmt(void *a, void *b)
 		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_ctimespec;
 		((t_file *)(b))->cmptime = ((t_file *)(b))->statbuf.st_ctimespec;
 	}
-	else if (g_ls_opts & OPT_U)
-	{
-		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_birthtimespec;
-		((t_file *)(b))->cmptime = ((t_file *)(b))->statbuf.st_birthtimespec;
-	}
+	OPTU
 	else if (g_ls_opts & OPT_u)
 	{
 		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_atimespec;

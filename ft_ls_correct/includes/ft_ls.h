@@ -25,6 +25,12 @@
 # include <sys/xattr.h>
 # include <limits.h>
 
+# define st_atimespec            st_atim
+# define st_mtimespec            st_mtim
+# define st_ctimespec            st_ctim
+# define st_birthtimespec        st_birthtim
+
+
 typedef struct		s_file
 {
 	char			*name;

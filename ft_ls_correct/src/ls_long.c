@@ -12,6 +12,17 @@
 
 #include <ft_ls.h>
 
+#ifdef __APPLE__ 
+# define OPTU_LONG do {\
+	else if (g_ls_opts & OPT_U) \
+		return (file->statbuf.st_birthtime); \
+	} while(0)
+#else
+
+# define OPTU_LONG
+# define listxattr(a, b, c, d) listxattr(a, b, c)
+#endif
+
 extern long int g_ls_opts;
 
 static inline time_t	ls_get_time(t_file *file)
@@ -20,8 +31,7 @@ static inline time_t	ls_get_time(t_file *file)
 		return (file->statbuf.st_ctime);
 	else if (g_ls_opts & OPT_u)
 		return (file->statbuf.st_atime);
-	else if (g_ls_opts & OPT_U)
-		return (file->statbuf.st_birthtime);
+	OPTU_LONG
 	else
 		return (file->statbuf.st_mtime);
 }

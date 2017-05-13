@@ -32,10 +32,10 @@ $(LIBFT):
 	@make -C libft
 
 $(OBJ): %.o: %.c
-	@$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $< -o $@
 
 $(NAME): $(LIBFT) $(OBJ)
-	@$(CC) $(LDFLAGS) -o $@ $^
+	@$(CC) -o $@ $^ $(LDFLAGS)
 	@echo "\033[32mCompiled Executable\033[0m"
 
 clean:
