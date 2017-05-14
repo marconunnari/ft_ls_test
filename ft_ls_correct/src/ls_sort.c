@@ -18,7 +18,7 @@
 		((t_file *)(b))->cmptime = ((t_file *)(b))->statbuf.st_birthtimespec; \
 		} while(0);
 #else
-#define OPTU
+#define OPTU_SORT {}
 #endif
 
 extern long int g_ls_opts;
@@ -36,7 +36,9 @@ static inline void	ls_get_timefmt(void *a, void *b)
 		((t_file *)(b))->cmptime = ((t_file *)(b))->statbuf.st_ctimespec;
 	}
 	else if (g_ls_opts & OPT_U)
-	OPTU_SORT
+	{
+		OPTU_SORT
+	}
 	else if (g_ls_opts & OPT_u)
 	{
 		((t_file *)(a))->cmptime = ((t_file *)(a))->statbuf.st_atimespec;

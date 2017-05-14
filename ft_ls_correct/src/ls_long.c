@@ -15,7 +15,7 @@
 #ifdef __APPLE__ 
 # define OPTU_LONG return (file->statbuf.st_birthtime);
 #else
-# define OPTU_LONG
+# define OPTU_LONG return (time_t)NULL;
 # define listxattr(a, b, c, d) listxattr(a, b, c)
 #endif
 
@@ -43,8 +43,7 @@ static void				ls_lm_time(t_file *file)
 	currtime = time(0);
 	tmp = ctime(&var_time);
 	if (g_ls_opts & OPT_T)
-		ft_printf(" %2.2s %3.3s %8.8s %4.4s", &tmp[8], &tmp[4], &tmp[11],
-																	&tmp[20]);
+		ft_printf(" %2.2s %3.3s %8.8s %4.4s", &tmp[8], &tmp[4], &tmp[11],&tmp[20]);
 	else if (ABS(currtime - var_time) > 15770000)
 		ft_printf(" %2.2s %3.3s  %4.4s", &tmp[8], &tmp[4], &tmp[20]);
 	else
