@@ -2,22 +2,27 @@
 -a
 -r
 -R
--arR
+-t
+-l
+-altrR
 io
 -a io
 -r io
 -R io
 -t io
--arRt io
+-l io
+-arlRt io
 ls io
 -a ls io
 -r ls io
 -R ls io
 -t ls io
--arRtr ls io
-ft_ls io
--a ft_ls io
--r ft_ls io
--R ft_ls io
--t ft_ls io
--arRtr ft_ls io
+-l ls io
+-alRtr ls io
+ft_ls_correct io
+-a ft_ls_correct io
+-r ft_ls_correct io
+-R ft_ls_correct io
+-t ft_ls_correct io
+-l ft_ls_correct io
+-alRtr ft_ls_correct io

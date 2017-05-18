@@ -2,8 +2,8 @@
 
 if make -C ft_ls_correct >/dev/null
 then
-	cp ft_ls_correct/ft_ls lscorrect.out
-	./lscorrect.out $@
+	cp ft_ls_correct/ft_ls /tmp/lscorrect.out
+	/tmp/lscorrect.out $@
 else
 	echo "Error compiling"
 fi
