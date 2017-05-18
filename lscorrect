@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-make -C ft_ls_correct >/dev/null
-cp ft_ls_correct/ft_ls lscorrect.out
-./lscorrect.out $@
-rm lscorrect.out
+if make -C ft_ls_correct >/dev/null
+then
+	cp ft_ls_correct/ft_ls lscorrect.out
+	./lscorrect.out $@
+else
+	echo "Error compiling"
+fi

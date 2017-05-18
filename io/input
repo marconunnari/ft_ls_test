@@ -1,0 +1,20 @@
+
+-a
+-r
+-R
+-arR
+io
+-a io
+-r io
+-R io
+-arR io
+ls io
+-a ls io
+-r ls io
+-R ls io
+-arR ls io
+ft_ls io
+-a ft_ls io
+-r ft_ls io
+-R ft_ls io
+-arR ft_ls io
