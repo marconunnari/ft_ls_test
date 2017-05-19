@@ -26,3 +26,8 @@ ft_ls_correct io
 -t ft_ls_correct io
 -l ft_ls_correct io
 -alRtr ft_ls_correct io
+not_existent
+-l not_existent
+-R not_existent
+-t not_existent
+-a not_existent
