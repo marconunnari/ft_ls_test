@@ -1,4 +1,3 @@
-io/input io/test1/file1
 
 -a
 -r
@@ -32,3 +31,6 @@ not_existent
 -R not_existent
 -t not_existent
 -a not_existent
+io/input io/test1/file1
+-l io/test2
+not_existent/not_existent
