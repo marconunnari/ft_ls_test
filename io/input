@@ -34,3 +34,4 @@ not_existent
 io/input io/test1/file1
 -l io/test2
 not_existent/not_existent
+-l io/test1/file1

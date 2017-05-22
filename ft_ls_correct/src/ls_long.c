@@ -72,7 +72,7 @@ static int				ls_print_type(mode_t mode)
 	else if (bits == S_IFSOCK)
 		write(1, "s", 1);
 	else if (bits == S_IFIFO)
-		write(1, "f", 1);
+		write(1, "p", 1);
 	else
 		write(1, "-", 1);
 	return (0);
