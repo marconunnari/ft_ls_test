@@ -31,6 +31,8 @@ not_existent
 -R not_existent
 -t not_existent
 -a not_existent
+not_existent >/dev/null
+not_existent 2>/dev/null
 io/input io/test1/file1
 -l io/test2
 not_existent/not_existent
@@ -38,3 +40,4 @@ not_existent/not_existent
 -l io/dlink1
 io/dlink1
 io/dlink1 ls
+-Z_ 2>/dev/null

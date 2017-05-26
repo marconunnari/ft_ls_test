@@ -47,7 +47,7 @@ static void				ls_lm_time(t_file *file)
 	else if (ABS(currtime - var_time) > 15770000)
 		ft_printf(" %2.2s %3.3s  %4.4s", &tmp[8], &tmp[4], &tmp[20]);
 	else
-		ft_printf(" %2.2s %3.3s %5.5s", &tmp[8], &tmp[4], &tmp[11]);
+		ft_printf(" %3.3s %2.2s %5.5s", &tmp[4], &tmp[8], &tmp[11]);
 }
 
 static int				ls_print_type(mode_t mode)
