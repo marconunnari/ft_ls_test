@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/03 21:36:48 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/03 21:40:51 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/05/30 20:22:50 by mnunnari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ extern long int g_ls_opts;
 
 static int			ls_usage(char flag)
 {
-	ft_dprintf(2, "ls: illegal option -- %c\n", flag);
+	ft_dprintf(2, "ft_ls: illegal option -- %c\n", flag);
 	ft_dprintf(2, "usage: ft_ls [-ARSTacdfgolrt1] [file ...]\n");
 	return (-1);
 }
