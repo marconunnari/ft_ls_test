@@ -41,4 +41,5 @@ not_existent/not_existent
 io/dlink1
 io/dlink1 ls
 -Z_ 2>/dev/null
+c b a
 -w
